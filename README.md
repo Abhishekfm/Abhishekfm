@@ -16,6 +16,8 @@ I have built up a strong skillset in HTML, CSS, and JavaScript. I have made over
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=Abhishekfm&theme=algolia&no-frame=false&no-bg=true&margin-w=4)
 
+[![](https://visitcount.itsvg.in/api?id=Abhishekfm&icon=0&color=0)](https://visitcount.itsvg.in)
+
 ### ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=light)
 
@@ -24,3 +26,4 @@ I have built up a strong skillset in HTML, CSS, and JavaScript. I have made over
 
   
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+
