@@ -1,52 +1,39 @@
-name: Generate GitHub Stats SVGs
+name: Update GitHub Stats Cards
 
 on:
   schedule:
-    - cron: "0 */8 * * *" # runs every 8 hours
-  workflow_dispatch: # lets you trigger it manually from the Actions tab
+    - cron: "0 0 * * *" # runs daily at midnight UTC
+  workflow_dispatch: # lets you trigger manually from the Actions tab
 
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Generate Stats Card SVG
-        uses: anuraghazra/github-readme-stats@latest
+      - name: Generate stats card
+        uses: readme-tools/github-readme-stats-action@v1
         with:
-          username: Abhishekfm
-          output_path: generated/stats.svg
-          # Customize look here:
-          args: >
-            --theme tokyonight
-            --show_icons true
-            --hide_border true
-            --count_private true
-            --include_all_commits true
-            --rank_icon github
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          card: stats
+          options: "username=Abhishekfm&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&rank_icon=github"
+          path: generated/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate Top Languages SVG
-        uses: anuraghazra/github-readme-stats@latest
+      - name: Generate top languages card
+        uses: readme-tools/github-readme-stats-action@v1
         with:
-          username: Abhishekfm
-          output_path: generated/languages.svg
-          card_type: top-langs
-          args: >
-            --theme tokyonight
-            --hide_border true
-            --layout compact
-            --langs_count 8
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          card: top-langs
+          options: "username=Abhishekfm&layout=compact&theme=tokyonight&hide_border=true&langs_count=8"
+          path: generated/languages.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Commit updated SVGs
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: update GitHub stats SVGs [skip ci]"
-          file_pattern: generated/*.svg
+      - name: Commit generated SVGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add generated/stats.svg generated/languages.svg
+          git diff --staged --quiet || git commit -m "chore: update GitHub stats SVGs [skip ci]"
+          git push
