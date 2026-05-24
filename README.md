@@ -95,9 +95,9 @@ const abhishek = {
 
 <div align="center">
 
-<img height="195px" src="./generated/stats.svg" />
-<img height="195px" src="https://streak-stats.demolab.com/?user=Abhishekfm&theme=tokyonight&hide_border=true" />
-<img height="195px" src="./generated/languages.svg" />
+<img height="200" align="center" src="./generated/stats.svg" />
+<img height="200" align="center" src="https://streak-stats.demolab.com/?user=Abhishekfm&theme=tokyonight&hide_border=true" />
+<img height="200" align="center" src="./generated/languages.svg" />
 
 </div>
 
@@ -111,9 +111,9 @@ const abhishek = {
 
 </div>
 
-<!-- ---
+---
 
-## 🚀 Featured Projects
+<!-- ## 🚀 Featured Projects
 
 > _Pinned repos do the talking — but here's the highlight reel:_
 
@@ -121,9 +121,9 @@ const abhishek = {
 | ------------------------------------------------------------ | ------------------------------ | ------------------------------------ |
 | 🔗 **[Project Name 1](https://github.com/Abhishekfm/repo1)** | Next.js · Node.js · Postgres   | Brief one-liner about what it solves |
 | 🔗 **[Project Name 2](https://github.com/Abhishekfm/repo2)** | React · Firebase · TailwindCSS | Brief one-liner about what it solves |
-| 🔗 **[Project Name 3](https://github.com/Abhishekfm/repo3)** | TypeScript · GraphQL · Redis   | Brief one-liner about what it solves | -->
+| 🔗 **[Project Name 3](https://github.com/Abhishekfm/repo3)** | TypeScript · GraphQL · Redis   | Brief one-liner about what it solves |
 
----
+--- -->
 
 ## 📈 Contribution Graph
 
